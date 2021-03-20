@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /build/
 /.classpath
 /.project
@@ -10,6 +11,8 @@
 /org.eclipse.wst.jsdt.ui.superType.name
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/nsajwan132/InterceptionDemo.git
 # Compiled class file
 *.class
 
