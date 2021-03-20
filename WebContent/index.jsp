@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
   <head>
     <title>Simple registration form</title>
@@ -132,7 +133,9 @@
   </head>
   <body>
     <div class="main-block">
-    
+<c:if test="${error}">
+<div style='color: red;text-align: center;' >Either user name or password is wrong.</div>
+</c:if>	    
       <h1>Registration</h1>
      <form action="LoginServlet" method="post">
         <hr>

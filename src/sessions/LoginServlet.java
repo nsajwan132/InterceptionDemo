@@ -29,7 +29,6 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		// get request parameters for username and passwd
 		String username = request.getParameter("username");
 		String passwd = request.getParameter("password");
@@ -42,13 +41,13 @@ public class LoginServlet extends HttpServlet {
 			Cookie userName = new Cookie("user", user);
 			userName.setMaxAge(60 * 60);
 			response.addCookie(userName);
-			session.setAttribute("error", false);
+			request.setAttribute("error", "false");
 			response.sendRedirect("LoginSuccess.jsp");
 		} else {
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/"+AppConstant.HOME_PAGE_URL);
 			PrintWriter out = response.getWriter();
+			request.setAttribute("error", "true");
 			rd.include(request, response);
-			out.print("<div color=\"red\" style=\"text-align: center\" >Either user name or password is wrong.</div>");
 		}
 	}
 
